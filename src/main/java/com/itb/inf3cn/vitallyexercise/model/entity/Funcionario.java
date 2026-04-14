@@ -1,6 +1,19 @@
 package com.itb.inf3cn.vitallyexercise.model.entity;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.*;
+
+@Entity
+@DiscriminatorValue("FUNCIONARIO")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+
+@EqualsAndHashCode(callSuper = true)
+
 public class Funcionario extends Usuario {
 
-    private String cnpj;
+    private String cnh;
 }

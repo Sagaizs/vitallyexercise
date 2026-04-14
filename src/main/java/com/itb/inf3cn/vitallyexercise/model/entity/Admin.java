@@ -1,11 +1,19 @@
 package com.itb.inf3cn.vitallyexercise.model.entity;
 
-@Entity
-@Table (name = "Usuario")
-@Inheritance(strategy = inheritanceType.single_TABLE)
-@DiscriminationColumn (name = "tipo de usuario")
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.*;
 
-public class Admin extends Usuario{
+@Entity
+@DiscriminatorValue("ADMIN")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+
+public class Admin extends Usuario {
 
     private String nivelAcesso;
 }
+
